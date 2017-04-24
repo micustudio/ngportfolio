@@ -1,0 +1,39 @@
+.navbar-brand{
+    font-family: 'Lekton', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 6px;
+    cursor: pointer;
+}
+
+.sub-menu {
+    position: absolute;
+    z-index: 3;
+    background-color: #FEFEFE;
+    border-radius: 2px;
+    margin-top: -2px;
+}
+
+.navbar-nav {
+    margin-left: 40px;
+}
+
+.nav-link {
+    margin: 0 40px 0 0;
+    font-family: 'Lekton', sans-serif;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 16px;
+    color: #555555;
+    cursor: pointer;
+}
+
+.resume:hover {
+    background-color: #FEFEFE;
+}
+
+.contact:hover {
+    background-color: #FEFEFE;
+}

@@ -1,0 +1,10 @@
+.container-fluid {
+    height: 100vh;
+    background: url('https://preview.ibb.co/dEkgLk/2017_04_23_10_20_25_2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    background-color: rgba(254, 254, 254, 0.4);
+}
