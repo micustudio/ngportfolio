@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// import { Router } from '@angular/router';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { AppService } from '../app.service';
 
@@ -38,7 +39,9 @@ import { AppService } from '../app.service';
 export class HeaderComponent implements OnInit {
   stateOfToggle = false;
   stateOfMenu = 'nohover';
-  constructor(private appService: AppService){}
+  constructor(private appService: AppService,
+              // private router: Router
+              ){}
 
   toggleTrue() {
       this.stateOfToggle = true;
@@ -56,5 +59,11 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  // navigate(){
+  //           setTimeout(() => { 
+  //           this.router.navigateByUrl('/items');
+  //       }, 300);
+  // }
 
 }
