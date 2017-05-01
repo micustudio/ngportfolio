@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, Inject, OnInit } from '@angular/core';
 // import { Router } from '@angular/router';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { AppService } from '../app.service';
+import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-header',
@@ -38,9 +39,11 @@ import { AppService } from '../app.service';
 
 export class HeaderComponent implements OnInit {
   stateOfToggle = false;
+  stateOfScroll = false;
   stateOfMenu = 'nohover';
   constructor(private appService: AppService,
               // private router: Router
+              @Inject(DOCUMENT) private document: Document
               ){}
 
   toggleTrue() {
@@ -65,5 +68,14 @@ export class HeaderComponent implements OnInit {
   //           this.router.navigateByUrl('/items');
   //       }, 300);
   // }
+
+  @HostListener("window:scroll", [])
+  onWindowScroll() {
+    let number = this.document.body.scrollTop;
+    if (number > 100) {
+      console.log("it scrolled past 100.");
+      this.stateOfScroll = true;
+    }
+  }
 
 }

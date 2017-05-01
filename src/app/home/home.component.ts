@@ -14,7 +14,15 @@ import { trigger, transition, style, animate } from '@angular/animations';
         animate('4500ms 300ms ease-out')
         ])
     ])
-
+,
+    trigger('borderState', [
+      transition('void => *', [
+        style({
+          width: '0%'
+        }),
+        animate('2000ms 300ms ease-out')
+        ])
+    ])
   ]
 })
 export class HomeComponent implements OnInit {

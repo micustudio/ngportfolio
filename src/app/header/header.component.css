@@ -6,6 +6,10 @@
     cursor: pointer;
 }
 
+.faded {
+    background-color: blue;
+}
+
 .sub-menu {
     position: absolute;
     z-index: 3;

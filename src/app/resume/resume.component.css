@@ -1,5 +1,16 @@
 :host {
     display: block;
-    height: 80vh;
-    background-color: rgba(0, 0 , 0, 0.3);
+    background: url('https://source.unsplash.com/ZPQE4XssoBc');
 }
+
+.container {
+        background-color: rgba(255, 255 , 255, 0.4);
+    height: 100vh;
+    padding-top: 50px;
+}
+
+h1 {
+    margin: 0 auto;
+}
+
+/*ZPQE4XssoBc*/
