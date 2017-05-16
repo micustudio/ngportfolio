@@ -1,10 +1,10 @@
 :host {
     display: block;
-    background: url('https://source.unsplash.com/4FGB28Jyy-Q');
+    /*background: url('https://source.unsplash.com/4FGB28Jyy-Q');*/
 }
 
 .container {
-        background-color: rgba(255, 255 , 255, 0.4);
+    background-color: rgba(255, 255 , 255, 0.4);
     height: 100vh;
     padding-top: 50px;
 }

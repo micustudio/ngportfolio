@@ -38,9 +38,11 @@ import { DOCUMENT } from '@angular/platform-browser';
 })
 
 export class HeaderComponent implements OnInit {
+  mobileMenu: boolean = false;
   stateOfToggle = false;
   stateOfScroll = false;
   stateOfMenu = 'nohover';
+  scrollNumber: number;
   constructor(private appService: AppService,
               // private router: Router
               @Inject(DOCUMENT) private document: Document
@@ -71,11 +73,15 @@ export class HeaderComponent implements OnInit {
 
   @HostListener("window:scroll", [])
   onWindowScroll() {
-    let number = this.document.body.scrollTop;
-    if (number > 100) {
-      console.log("it scrolled past 100.");
+    this.scrollNumber = this.document.body.scrollTop;
+    if (this.scrollNumber > 0) {
+      console.log("it scrolled past 56.");
       this.stateOfScroll = true;
     }
+  }
+
+  toggleMenu() {
+    this.mobileMenu = !this.mobileMenu;
   }
 
 }

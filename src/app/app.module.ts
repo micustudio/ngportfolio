@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {ScrollToModule} from 'ng2-scroll-to';
+import { ScrollToModule } from 'ng2-scroll-to';
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
@@ -16,6 +16,7 @@ import { AboutComponent } from './about/about.component';
 import { ResumeComponent } from './resume/resume.component';
 import { ContactComponent } from './contact/contact.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { DropdownDirective } from './dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     AboutComponent,
     ResumeComponent,
     ContactComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,

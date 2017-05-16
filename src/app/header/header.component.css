@@ -1,13 +1,17 @@
+/*nav {
+    transition: 300ms ease-out;
+}
+
 .navbar-brand{
     font-family: 'Roboto Condensed', sans-serif;
-    font-weight: bold;
     font-size: 14px;
-    letter-spacing: 6px;
+    letter-spacing: 8px;
     cursor: pointer;
+    color: #fafbfe;
 }
 
 .faded {
-    background-color: blue;
+    background-color: #fafbfe;
 }
 
 .sub-menu {
@@ -24,13 +28,13 @@
 
 .nav-link {
     margin: 0 40px 0 0;
-    font-family: 'Lekton', sans-serif;
+    font-family: Arial, sans-serif;
     cursor: pointer;
 }
 
 h1 {
-    font-size: 16px;
-    color: #555555;
+    font-size: 18px;
+    color: #FEFEFE;
     cursor: pointer;
 }
 
@@ -40,4 +44,4 @@ h1 {
 
 .contact:hover {
     background-color: #FEFEFE;
-}
+}*/
