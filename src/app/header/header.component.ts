@@ -45,7 +45,7 @@ export class HeaderComponent implements OnInit {
   scrollNumber: number;
   constructor(private appService: AppService,
               // private router: Router
-              @Inject(DOCUMENT) private document: Document
+              // @Inject(DOCUMENT) private document: Document
               ){}
 
   toggleTrue() {
@@ -71,14 +71,14 @@ export class HeaderComponent implements OnInit {
   //       }, 300);
   // }
 
-  @HostListener("window:scroll", [])
-  onWindowScroll() {
-    this.scrollNumber = this.document.body.scrollTop;
-    if (this.scrollNumber > 0) {
-      console.log("it scrolled past 56.");
-      this.stateOfScroll = true;
-    }
-  }
+  // @HostListener("window:scroll", [])
+  // onWindowScroll() {
+  //   this.scrollNumber = this.document.body.scrollTop;
+  //   if (this.scrollNumber > 0) {
+  //     console.log("it scrolled past 56.");
+  //     this.stateOfScroll = true;
+  //   }
+  // }
 
   toggleMenu() {
     this.mobileMenu = !this.mobileMenu;
