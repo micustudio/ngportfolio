@@ -2,7 +2,7 @@ import { Component, HostListener, Inject, OnInit } from '@angular/core';
 // import { Router } from '@angular/router';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { AppService } from '../app.service';
-import { DOCUMENT } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -44,7 +44,7 @@ export class HeaderComponent implements OnInit {
   stateOfMenu = 'nohover';
   scrollNumber: number;
   constructor(private appService: AppService,
-              // private router: Router
+              private router: Router
               // @Inject(DOCUMENT) private document: Document
               ){}
 
@@ -79,6 +79,10 @@ export class HeaderComponent implements OnInit {
   //     this.stateOfScroll = true;
   //   }
   // }
+
+  navigate(route: string){
+    this.appService.navigate(route);
+  }
 
   toggleMenu() {
     this.mobileMenu = !this.mobileMenu;

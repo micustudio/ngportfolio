@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding, HostListener, OnInit } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
@@ -19,6 +19,9 @@ import { trigger, transition, style, animate } from '@angular/animations';
 })
 export class AboutComponent implements OnInit {
   @HostBinding('@contentState') routeAnimation = true;
+  @HostListener('@contentState.done') play(){
+    console.log("It has done");
+  }
 
   constructor() { }
 

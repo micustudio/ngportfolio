@@ -1,5 +1,4 @@
 :host {
-    /*padding-top: 100px;*/
     display: block;
     height: 100vh;
     background: url('https://source.unsplash.com/DExmtdICfpY');
@@ -11,7 +10,6 @@
 
 .splash {
     position: relative;
-    /*top: calc(50% - 56px);*/
     top: 45%;
     transform: translateY(-50%);
 }

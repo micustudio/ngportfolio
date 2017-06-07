@@ -1,49 +1,27 @@
- <!--[ngClass]="{'  : stateOfScroll}"  
-<nav [ngStyle]="{backgroundColor: scrollNumber > 0 ? '#FEFEFE' : 'transparent'}" class="navbar navbar-toggleable-md navbar-light fixed-top">
-  <a class="navbar-brand" scrollTo href="#top">MICHAEL REYES COMILANG</a>
-  <div class="collapse navbar-collapse">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link resume" scrollTo href="#about">About Me</a>
-      </li>
-      <li class="nav-item" (mouseleave)="toggleFalse()">
-        <a class="nav-link" (click)="toggleTrue()" (mouseover)="toggleTrue()" scrollTo href="#portfolio" [ngStyle]="{backgroundColor: stateOfToggle ? '#FEFEFE' : ''}">Portfolio</a>
-        <div class="sub-menu" *ngIf="stateOfToggle" @submenuState>
-          <a class="nav-link" @submenuState scrollTo href="#personal">Personal Projects</a>
-          <a class="nav-link" @submenuState scrollTo href="#freelance">Freelance</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link resume" routerLinkActive="active" scrollTo href="#resume">Resume</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link contact" routerLinkActive="active" scrollTo href="#contact">Contact</a>
-      </li>
-    </ul>
-  </div>
-</nav>-->
-
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top">
   <button class="navbar-toggler navbar-toggler-right" type="button" (click)="toggleMenu()">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" rounterLink="home">Michael Reyes Comilang</a>
 
   <div class="collapse navbar-collapse" [ngClass]="{show: mobileMenu}">
     <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" (click)="navigate('home')">Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" scrollTo href="#about">Link</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" (click)="navigate('about')">About</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" (click)="navigate('portfolio')">Portfolio</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" (click)="navigate('resume')">Resume</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" (click)="navigate('contact')">Contact</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+
   </div>
 </nav>
