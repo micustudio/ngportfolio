@@ -1,27 +1,29 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top">
-  <button class="navbar-toggler navbar-toggler-right" type="button" (click)="toggleMenu()">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" rounterLink="home">Michael Reyes Comilang</a>
+<div [@headerState]="headerState">
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top">
+    <button class="navbar-toggler navbar-toggler-right" type="button" (click)="toggleMenu()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" rounterLink="home">Michael R. Comilang</a>
 
-  <div class="collapse navbar-collapse" [ngClass]="{show: mobileMenu}">
-    <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" (click)="navigate('home')">Home</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" (click)="navigate('about')">About</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" (click)="navigate('portfolio')">Portfolio</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" (click)="navigate('resume')">Resume</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" (click)="navigate('contact')">Contact</a>
-      </li>
-    </ul>
+    <div class="collapse navbar-collapse" [ngClass]="{show: mobileMenu}">
+      <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+        <li class="nav-item">
+          <a class="nav-link" (click)="navigate('home')">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="navigate('about')">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="navigate('portfolio')">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="navigate('resume')">Resume</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="navigate('contact')">Contact</a>
+        </li>
+      </ul>
 
-  </div>
-</nav>
+    </div>
+  </nav>
+</div>

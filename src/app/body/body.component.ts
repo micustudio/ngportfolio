@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { navigateTrigger } from '../animations';
-import { Router } from '@angular/router'
+import { Router, ActivatedRouteSnapshot } from '@angular/router'
 
 import { AppService } from '../app.service';
 import { Subscription } from 'rxjs/Subscription';
@@ -10,18 +10,9 @@ import { Subscription } from 'rxjs/Subscription';
   selector: 'app-body',
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.css'],
-  animations: [ navigateTrigger
-    // trigger('borderState', [
-    //   transition('void => *', [
-    //     style({
-    //       width: '0%'
-    //     }),
-    //     animate('2000ms 300ms ease-out')
-    //     ])
-    // ])
-  ]
+  animations: [ navigateTrigger ]
 })
-export class BodyComponent implements OnInit {
+export class BodyComponent implements OnInit, OnDestroy {
 subscription: Subscription;
 transitionState: string;
 route: string;
@@ -30,22 +21,23 @@ route: string;
               private router: Router) { }
 
   ngOnInit() {
+    this.transitionState = 'enter';
+    console.log(`Hello the animation state of the component state is... ${this.transitionState}`);
     this.subscription = this.appService.navigationChanged
       .subscribe(
         (route: string) => {
               this.transitionState = 'leave';
               this.route = route;
-          
         }
       );
   }
 
   animationDone(event) {
-    if(this.route) {
-        console.log(event.toState); //if
-        this.router.navigateByUrl('/' + this.route);
-        this.transitionState = null;
-    }
+        if(event.toState == 'leave') {
+          console.log("Hey looks like the leave state is acticated.")
+          this.router.navigateByUrl('/' + this.route);
+          this.transitionState = null;
+        }
   }
 
   ngOnDestroy() {

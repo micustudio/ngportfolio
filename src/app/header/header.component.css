@@ -26,11 +26,7 @@ nav {
     margin-left: 40px;
 }
 
-.nav-link {
-    margin: 0 40px 0 0;
-    font-family: Arial, sans-serif;
-    cursor: pointer;
-}
+
 
 h1 {
     font-size: 18px;
@@ -38,8 +34,35 @@ h1 {
     cursor: pointer;
 }
 
+.nav-link {
+    margin: 0 40px 0 0;
+    padding: .2em 1.2em;  
+    font-family: 'Open Sans', sans-serif;
+    -webkit-transition: .1s ease-out;
+    transition: .1s ease-out;
+    cursor: pointer;
+    border-radius: 4px 4px 0 0;
+    border-top: 1px solid #f7f7f7;
+    border-left: 1px solid #f7f7f7;
+    border-right: 1px solid #f7f7f7;
+}
+
 .nav-link:hover {
     background-color: #FEFEFE;
+
+    border-top: 1px solid #F2F2F2;
+    border-left: 1px solid #F2F2F2;
+    border-right: 1px solid #F2F2F2;
+        transform: translate(0, -10%);
+    
+}
+
+.current {
+    background-color: #FEFEFE;
+    border-top: 1px solid #F2F2F2;
+    border-left: 1px solid #F2F2F2;
+    border-right: 1px solid #F2F2F2;
+
 }
 
 .contact:hover {

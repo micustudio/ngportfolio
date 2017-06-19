@@ -1,52 +1,39 @@
-import { Component, HostListener, Inject, OnInit } from '@angular/core';
-// import { Router } from '@angular/router';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Component, HostListener, Inject, OnInit, OnDestroy } from '@angular/core';
 import { AppService } from '../app.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+
+import { headerTrigger } from '../animations';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  animations: [
-    trigger('menuState',[
-      state('hover', style({
-        backgroundColor: '#FEFEFE',
-        color: 'rgba(0, 0, 0, 0.8)'
-      })),
-      transition('nohover => hover', 
-        animate(200) 
-      )
-    ]),
-    trigger('submenuState',[
-      transition('void => *', [
-        style({
-          opacity: 0,
-          transform: 'translate(0, 10px)',
-        }),
-        animate('200ms ease-out')
-      ]),
-      transition('* => void',
-        animate('100ms ease-out', 
-        style({
-          opacity: 0,
-          transform: 'translate(0, 10px)'
-        }))
-      )
-    ])
-  ]
+  animations: [headerTrigger]
 })
 
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
+  currentUrl: any;
+  subscription: Subscription;
   mobileMenu: boolean = false;
+  headerState: String;
   stateOfToggle = false;
   stateOfScroll = false;
   stateOfMenu = 'nohover';
   scrollNumber: number;
   constructor(private appService: AppService,
-              private router: Router
-              // @Inject(DOCUMENT) private document: Document
-              ){}
+              private route: ActivatedRoute,
+              private router: Router){}
+
+  ngOnInit() {
+    this.headerState = 'enter';
+    this.subscription = this.router.events.subscribe( event => {
+        if (event instanceof NavigationEnd ) {
+          this.currentUrl = event.url;
+          console.log(this.currentUrl);
+        }
+});
+  }
 
   toggleTrue() {
       this.stateOfToggle = true;
@@ -58,27 +45,7 @@ export class HeaderComponent implements OnInit {
       this.stateOfMenu = 'nohover';
   }
 
-  // sayHi (){
-  //   this.appService.helloFromAppService();
-  // }
 
-  ngOnInit() {
-  }
-
-  // navigate(){
-  //           setTimeout(() => { 
-  //           this.router.navigateByUrl('/items');
-  //       }, 300);
-  // }
-
-  // @HostListener("window:scroll", [])
-  // onWindowScroll() {
-  //   this.scrollNumber = this.document.body.scrollTop;
-  //   if (this.scrollNumber > 0) {
-  //     console.log("it scrolled past 56.");
-  //     this.stateOfScroll = true;
-  //   }
-  // }
 
   navigate(route: string){
     this.appService.navigate(route);
@@ -86,6 +53,10 @@ export class HeaderComponent implements OnInit {
 
   toggleMenu() {
     this.mobileMenu = !this.mobileMenu;
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }
