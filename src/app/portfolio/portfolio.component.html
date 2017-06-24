@@ -1,3 +1,12 @@
-<p>
-  portfolio works!
-</p>
+<div class="contain-me"
+            [@backgroundState]="backgroundState"
+            (@backgroundState.done)="animationDone($event)"
+    >
+    <div class="splash">
+            <div class="container"
+            [@contentState]="contentState"
+            (@contentState.done)="animationDone($event)">
+                <h1>"Check out my Work."</h1>
+            </div>      
+    </div>
+</div>

@@ -3,24 +3,26 @@ import { AppService } from '../app.service';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
-import { headerTrigger } from '../animations';
+import { headerTrigger, linkColorTrigger } from '../animations';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  animations: [headerTrigger]
+  animations: [headerTrigger, linkColorTrigger]
 })
 
 export class HeaderComponent implements OnInit, OnDestroy {
-  currentUrl: any;
+  currentRoute: string = '/';
   subscription: Subscription;
   mobileMenu: boolean = false;
   headerState: String;
   stateOfToggle = false;
   stateOfScroll = false;
   stateOfMenu = 'nohover';
-  scrollNumber: number;
+  linkColorState: String = '';
+
+
   constructor(private appService: AppService,
               private route: ActivatedRoute,
               private router: Router){}
@@ -29,8 +31,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.headerState = 'enter';
     this.subscription = this.router.events.subscribe( event => {
         if (event instanceof NavigationEnd ) {
-          this.currentUrl = event.url;
-          console.log(this.currentUrl);
+          this.currentRoute = event.url;
+          console.log("The current routing route is ..." + this.currentRoute);
+          if(this.currentRoute == '/about'){
+            console.log("ITS TRUEE!!!");
+            this.linkColorState = 'contrast';
+          }
         }
 });
   }
@@ -53,6 +59,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   toggleMenu() {
     this.mobileMenu = !this.mobileMenu;
+  }
+
+  checkRoute(route, route2){
+    if(this.currentRoute == route || this.currentRoute == route2)
+      return true;
+    else
+      return false;
   }
 
   ngOnDestroy() {

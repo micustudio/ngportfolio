@@ -2,17 +2,19 @@ nav {
     transition: 300ms ease-out;
 }
 
-.navbar-brand{
+.navbar-brand {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 14px;
     letter-spacing: 8px;
     cursor: pointer;
-    color: #fafbfe;
+    color: #555555;
+    -webkit-transition: .1s ease-out;
+    transition: .1s ease-out;
+}
+.navbar-brand:hover {
+    color: #888888;
 }
 
-.faded {
-    background-color: #fafbfe;
-}
 
 .sub-menu {
     position: absolute;
@@ -34,10 +36,13 @@ h1 {
     cursor: pointer;
 }
 
-.nav-link {
+.nav-link-navigate {
+
     margin: 0 40px 0 0;
     padding: .2em 1.2em;  
     font-family: 'Open Sans', sans-serif;
+    font-size: .8em;
+    letter-spacing: .1em;
     -webkit-transition: .1s ease-out;
     transition: .1s ease-out;
     cursor: pointer;
@@ -47,7 +52,7 @@ h1 {
     border-right: 1px solid #f7f7f7;
 }
 
-.nav-link:hover {
+.nav-link-navigate:hover {
     background-color: #FEFEFE;
 
     border-top: 1px solid #F2F2F2;
@@ -63,6 +68,10 @@ h1 {
     border-left: 1px solid #F2F2F2;
     border-right: 1px solid #F2F2F2;
 
+}
+
+.contrast {
+    color: #FEFEFE;
 }
 
 .contact:hover {

@@ -1,4 +1,4 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Router } from '@angular/router';
 
@@ -19,7 +19,7 @@ export class AppService {
     navigate(route: string) {
     this.navigationChanged.next(route);
     console.log("the routes is... " + route);
-    this.router.navigateByUrl('/' + route);
+    // this.router.navigateByUrl('/' + route);
   }
 
 }

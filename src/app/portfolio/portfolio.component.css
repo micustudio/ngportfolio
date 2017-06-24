@@ -1,6 +1,43 @@
 :host {
     display: block;
     height: 100vh;
-    padding-top: 50px;
-    background-color: rgba(0, 0 , 0, 0.3);
+}
+
+.contain-me {
+    height: 100vh;
+    background: url('https://source.unsplash.com/slItfWbhijc');
+    background-size: cover;
+    background-position: center;
+    padding-top: 56px;
+}
+
+.splash {
+    position: relative;
+    top: 45%;
+    transform: translateY(-50%);
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #FEFEFE;
+    font-size: 3em;
+}
+
+h3 {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #FEFEFE;
+}
+
+p {
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+    letter-spacing: 3px;
+    color: #F4F4F4;
+    margin-top: 12px;
 }

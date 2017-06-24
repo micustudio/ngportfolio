@@ -1,1 +1,12 @@
-<h1>Let's Connect.</h1>
+<div class="contain-me"
+            [@backgroundState]="backgroundState"
+            (@backgroundState.done)="animationDone($event)"
+    >
+    <div class="splash">
+            <div class="container"
+            [@contentState]="contentState"
+            (@contentState.done)="animationDone($event)">
+                <h1>"Let's Connect."</h1>
+            </div>      
+    </div>
+</div>

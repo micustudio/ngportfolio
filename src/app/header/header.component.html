@@ -1,26 +1,26 @@
 <div [@headerState]="headerState">
-  <nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top">
+  <nav class="navbar navbar-toggleable-md navbar-light fixed-top">
     <button class="navbar-toggler navbar-toggler-right" type="button" (click)="toggleMenu()">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" rounterLink="home">Michael R. Comilang</a>
+    <div class="navbar-brand" [ngClass]="{'contrast': checkRoute('/about')}" (click)="navigate('home')">Michael R. Comilang</div>
 
     <div class="collapse navbar-collapse" [ngClass]="{show: mobileMenu}">
       <ul class="navbar-nav mr-auto mt-2 mt-md-0">
         <li class="nav-item">
-          <a class="nav-link" (click)="navigate('home')">Home</a>
+          <div class="nav-link-navigate nav-button" [ngClass]="{'current': checkRoute('/home', '/'), 'contrast': checkRoute('/about')}" (click)="navigate('home')">Home</div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="navigate('about')">About</a>
+          <div class="nav-link-navigate nav-button" [ngClass]="{'current': checkRoute('/about')}" (click)="navigate('about')">About</div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="navigate('portfolio')">Portfolio</a>
+          <div class="nav-link-navigate nav-button" [ngClass]="{'current': checkRoute('/portfolio'), 'contrast': checkRoute('/about')}" (click)="navigate('portfolio')">Portfolio</div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="navigate('resume')">Resume</a>
+          <div class="nav-link-navigate nav-button" [ngClass]="{'current': checkRoute('/resume'), 'contrast': checkRoute('/about')}" (click)="navigate('resume')">Resume</div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="navigate('contact')">Contact</a>
+          <div class="nav-link-navigate nav-button" [ngClass]="{'current': checkRoute('/contact'), 'contrast': checkRoute('/about')}" (click)="navigate('contact')">Contact</div>
         </li>
       </ul>
 

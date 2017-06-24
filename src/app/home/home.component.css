@@ -1,6 +1,10 @@
 :host {
     display: block;
     height: 100vh;
+}
+
+.contain-me {
+    height: 100vh;
     background: url('https://source.unsplash.com/DExmtdICfpY');
     background-size: cover;
     background-position: center;

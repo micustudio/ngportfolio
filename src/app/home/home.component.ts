@@ -1,46 +1,54 @@
-import { Component, HostBinding, OnInit, OnDestroy } from '@angular/core';
+import { Component, HostBinding, HostListener, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router'
 
 import { AppService } from '../app.service';
 import { Subscription } from 'rxjs/Subscription';
 
-import { navigateTrigger } from '../animations';
+import { backgroundTrigger, contentTrigger } from '../animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  animations: []
+  animations: [backgroundTrigger, contentTrigger]
 })
-export class HomeComponent {
-// subscription: Subscription;
-// transitionState: string;
-// route: string;
+export class HomeComponent implements OnInit {
+subscription: Subscription;
+backgroundState: string;
+contentState: string;
+route: string;
 
-//   constructor(private appService: AppService,
-//               private router: Router) { }
+  constructor(private appService: AppService,
+              private router: Router) { }
 
-//   ngOnInit() {
-//     this.subscription = this.appService.navigationChanged
-//       .subscribe(
-//         (route: string) => {
-//               console.log("whats uppp"); //if
-//               this.transitionState = 'leave';
-//               this.route = route;
-          
-//         }
-//       );
-//   }
+  ngOnInit() {
+    this.backgroundState = 'show';
+    this.contentState = 'hidden';
+    this.subscription = this.appService.navigationChanged
+      .subscribe(
+        (route: string) => {
+          console.log("got it!! the route here is... " + route);
+             this.backgroundState = 'leave';
+              this.route = route;
+        }
+      );
+  }
 
-//   animationDone(event) {
-//     if(this.route) {
-//         console.log(event.toState); //if
-//         this.router.navigateByUrl('/' + this.route);
-//     }
-//   }
+  animationDone(event) {
+    console.log(event);
+    if(event.triggerName == 'backgroundState' && event.toState == 'show' ) {
+        this.contentState = 'enter';
+    }
+    else if(event.toState == 'leave') {
+        // reset states
+        this.backgroundState = 'show';
+        this.contentState = 'hidden';
+        this.router.navigateByUrl('/' + this.route);
+    }
+  }
 
-//   ngOnDestroy() {
-//     this.subscription.unsubscribe();
-//   }
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 
 }

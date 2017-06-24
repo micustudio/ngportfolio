@@ -5,7 +5,7 @@ export const headerTrigger = trigger('headerState', [
         style({
           opacity: 0
         }),
-        animate('1000ms 300ms ease-out'),
+        animate('300ms ease-out'),
         style({
           opacity: 100
         })
@@ -13,16 +13,61 @@ export const headerTrigger = trigger('headerState', [
         
     ])
 
-export const navigateTrigger = trigger('contentState', [
+export const linkColorTrigger = trigger('linkColorState', [
+      transition('* => contrast', [
+        animate('300ms ease-out'), style({
+          color: '#FEFEFE',
+          backgroundColor: 'lightblue'
+        })
+        ])
+        
+    ])
+
+export const backgroundTrigger = trigger('backgroundState', [
       state('leave', style({
-        opacity: 0
-      })),
-      transition('void => enter', [
+         opacity: 0
+       })),
+      transition('* => show', [
         style({
           opacity: 0
         }),
-        animate('1000ms 300ms ease-out')
+        animate('600ms 300ms ease-out'),
+        style({opacity: 1})
         ]),
-        transition('* => leave', animate('500ms 300ms ease-out'))
-        
+        transition('* => leave', animate('200ms 100ms ease-out', style({
+         opacity: 0
+       })))
     ])
+
+export const contentTrigger = trigger('contentState', [
+      state('hidden', style({opacity: 0})),
+      transition('* => enter', [
+        animate('300ms ease-out'),
+        style({opacity: 1})
+        ]),
+    ])
+
+
+
+// export const navigateTrigger = trigger('contentState', [
+//       state('leave', style({
+//         opacity: 0
+//       })),
+//       state('enter', style({
+//         opacity: 1
+//       })),
+//       transition('* => enter', [
+//         style({
+//           opacity: 0
+//         }),
+//         animate('1000ms 300ms ease-out')
+//         ]),
+//       transition('void => enter', [
+//         style({
+//           opacity: 0
+//         }),
+//         animate('1000ms 300ms ease-out')
+//         ]),
+//         transition('* => leave', animate('500ms 300ms ease-out'))
+        
+//     ])
