@@ -8,7 +8,6 @@ import { ScrollToModule } from 'ng2-scroll-to';
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
 import { HeaderComponent } from './header/header.component';
-import { BodyComponent } from './body/body.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
@@ -22,7 +21,6 @@ import { DropdownDirective } from './dropdown.directive';
   declarations: [
     AppComponent,
     HeaderComponent,
-    BodyComponent,
     HomeComponent,
     AboutComponent,
     ResumeComponent,
