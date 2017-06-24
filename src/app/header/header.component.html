@@ -3,24 +3,24 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" (click)="toggleMenu()">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="navbar-brand" [ngClass]="{'contrast': checkRoute('/about')}" (click)="navigate('home')">Michael R. Comilang</div>
+    <div class="navbar-brand" [ngClass]="{'contrast': checkRoute('/about', '')}" (click)="navigate('home')">Michael R. Comilang</div>
 
     <div class="collapse navbar-collapse" [ngClass]="{show: mobileMenu}">
       <ul class="navbar-nav mr-auto mt-2 mt-md-0">
         <li class="nav-item">
-          <div class="nav-link-navigate nav-button" [ngClass]="{'current': checkRoute('/home', '/'), 'contrast': checkRoute('/about')}" (click)="navigate('home')">Home</div>
+          <div class="nav-link-navigate nav-button" [ngClass]="{'current': checkRoute('/home', '/'), 'contrast': checkRoute('/about', '')}" (click)="navigate('home')">Home</div>
         </li>
         <li class="nav-item">
-          <div class="nav-link-navigate nav-button" [ngClass]="{'current': checkRoute('/about')}" (click)="navigate('about')">About</div>
+          <div class="nav-link-navigate nav-button" [ngClass]="{'current': checkRoute('/about', '')}" (click)="navigate('about')">About</div>
         </li>
         <li class="nav-item">
-          <div class="nav-link-navigate nav-button" [ngClass]="{'current': checkRoute('/portfolio'), 'contrast': checkRoute('/about')}" (click)="navigate('portfolio')">Portfolio</div>
+          <div class="nav-link-navigate nav-button" [ngClass]="{'current': checkRoute('/portfolio', ''), 'contrast': checkRoute('/about', '')}" (click)="navigate('portfolio')">Portfolio</div>
         </li>
         <li class="nav-item">
-          <div class="nav-link-navigate nav-button" [ngClass]="{'current': checkRoute('/resume'), 'contrast': checkRoute('/about')}" (click)="navigate('resume')">Resume</div>
+          <div class="nav-link-navigate nav-button" [ngClass]="{'current': checkRoute('/resume', ''), 'contrast': checkRoute('/about', '')}" (click)="navigate('resume')">Resume</div>
         </li>
         <li class="nav-item">
-          <div class="nav-link-navigate nav-button" [ngClass]="{'current': checkRoute('/contact'), 'contrast': checkRoute('/about')}" (click)="navigate('contact')">Contact</div>
+          <div class="nav-link-navigate nav-button" [ngClass]="{'current': checkRoute('/contact', ''), 'contrast': checkRoute('/about', '')}" (click)="navigate('contact')">Contact</div>
         </li>
       </ul>
 
