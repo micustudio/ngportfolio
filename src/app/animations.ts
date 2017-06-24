@@ -15,9 +15,9 @@ export const headerTrigger = trigger('headerState', [
 
 export const linkColorTrigger = trigger('linkColorState', [
       transition('* => contrast', [
-        animate('300ms ease-out'), style({
-          color: '#FEFEFE',
-          backgroundColor: 'lightblue'
+        animate('300ms ease-out'),
+        style({
+          'font-size': '100px'
         })
         ])
         

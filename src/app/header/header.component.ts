@@ -36,6 +36,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
           if(this.currentRoute == '/about'){
             console.log("ITS TRUEE!!!");
             this.linkColorState = 'contrast';
+            
           }
         }
 });
