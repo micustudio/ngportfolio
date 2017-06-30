@@ -2,8 +2,11 @@
             [@backgroundState]="backgroundState"
             (@backgroundState.done)="animationDone($event)"
     >
-    <div class="splash">
-            <div class="container"
+    <div class="splash"
+        [@splashState]="splashState"
+        (@splashState.done)="animationDone($event)"
+        >
+            <div
             [@contentState]="contentState"
             (@contentState.done)="animationDone($event)">
                 <h1>"Hello, I'm a Junior web developer based in the San Francisco, Bay Area"</h1>

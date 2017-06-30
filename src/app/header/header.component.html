@@ -3,7 +3,7 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" (click)="toggleMenu()">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="navbar-brand" [ngClass]="{'contrast': checkRoute('/about', ''), 'non-contrast': !checkRoute('/about', '') }">Michael R. Comilang</div>
+    <div class="navbar-brand" [ngClass]="{'contrast': checkRoute('/about', ''), 'non-contrast': !checkRoute('/about', '') }" (click)="navigate('home')">Michael R. Comilang</div>
 
     <div class="collapse navbar-collapse" [ngClass]="{show: mobileMenu}">
       <ul class="navbar-nav mr-auto mt-2 mt-md-0">

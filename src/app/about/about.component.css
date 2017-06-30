@@ -11,12 +11,12 @@
     padding-top: 56px;
 }
 
-
 .splash {
-    position: relative;
-    top: 45%;
-    transform: translateY(-50%);
-}
+    background: blue;
+    margin: 0 auto;
+    padding: 40px;
+    margin-top: 12%;
+}   
 
 h1 {
     text-align: center;

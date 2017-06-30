@@ -4,17 +4,18 @@ import { Router } from '@angular/router'
 import { AppService } from '../app.service';
 import { Subscription } from 'rxjs/Subscription';
 
-import { backgroundTrigger, contentTrigger } from '../animations';
+import { backgroundTrigger, splashTrigger, contentTrigger } from '../animations';
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.css'],
-  animations: [ backgroundTrigger, contentTrigger ]
+  animations: [ backgroundTrigger, splashTrigger, contentTrigger ]
 })
 export class PortfolioComponent implements OnInit {
   subscription: Subscription;
   backgroundState: string;
+  splashState: string;
   contentState: string;
   route: string;
 
@@ -23,6 +24,7 @@ export class PortfolioComponent implements OnInit {
 
   ngOnInit() {
     this.backgroundState = 'show';
+    this.splashState = 'hidden';
     this.contentState = 'hidden';
     this.subscription = this.appService.navigationChanged
       .subscribe(
@@ -35,13 +37,16 @@ export class PortfolioComponent implements OnInit {
   }
 
   animationDone(event) {
-    console.log(event);
     if(event.triggerName == 'backgroundState' && event.toState == 'show' ) {
+        this.splashState = 'enter';
+    }
+    else if(event.triggerName == 'splashState' && event.toState == 'enter' ) {
         this.contentState = 'enter';
     }
     else if(event.toState == 'leave') {
         // reset states
         this.backgroundState = 'show';
+        this.splashState = 'hidden';
         this.contentState = 'hidden';
         this.router.navigateByUrl('/' + this.route);
     }
