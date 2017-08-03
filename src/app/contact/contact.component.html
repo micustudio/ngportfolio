@@ -3,8 +3,8 @@
             (@backgroundState.done)="animationDone($event)"
     >
     <div class="splash"
-        [@splashState]="splashState"
-        (@splashState.done)="animationDone($event)"
+        [@overlayState]="splashState"
+        (@overlayState.done)="animationDone($event)"
         >
             <div
             [@contentState]="contentState"

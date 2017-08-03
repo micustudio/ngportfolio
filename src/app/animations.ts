@@ -39,7 +39,7 @@ export const backgroundTrigger = trigger('backgroundState', [
        })))
     ])
 
-export const splashTrigger = trigger('splashState', [
+export const overlayTrigger = trigger('overlayState', [
       state('hidden', style({
         padding: 0,
         opacity: 0,
@@ -79,28 +79,3 @@ export const contentTrigger = trigger('contentState', [
         })
         ]),
     ])
-
-
-
-// export const navigateTrigger = trigger('contentState', [
-//       state('leave', style({
-//         opacity: 0
-//       })),
-//       state('enter', style({
-//         opacity: 1
-//       })),
-//       transition('* => enter', [
-//         style({
-//           opacity: 0
-//         }),
-//         animate('1000ms 300ms ease-out')
-//         ]),
-//       transition('void => enter', [
-//         style({
-//           opacity: 0
-//         }),
-//         animate('1000ms 300ms ease-out')
-//         ]),
-//         transition('* => leave', animate('500ms 300ms ease-out'))
-        
-//     ])

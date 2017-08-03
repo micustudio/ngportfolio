@@ -1,30 +1,12 @@
-:host {
-  width: 100%;
-  height: 100vh;
-  position: relative;
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-.contain {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-  }
-
-.loader {
-    border: 2px solid #f3f3f3;
-    border-top: 2px solid #3498db;
-    border-radius: 50%;     
-    width: 20px;     
-    height: 20px;
-    animation: spin 2s linear infinite; 
-}
-
-@keyframes spin {     
-    0% { 
-        transform: rotate(0deg); 
-    }     
-    100% { 
-        transform: rotate(360deg); 
-        } 
+body {
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

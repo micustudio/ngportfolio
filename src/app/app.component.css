@@ -1,22 +1,3 @@
 .container-fluid {
     padding: 0px;
-    /*height: 100vh;*/
-    /*background: url('https://preview.ibb.co/dEkgLk/2017_04_23_10_20_25_2.jpg');*/
-    /*background: url('https://source.unsplash.com/kRLXoi3Dtqs');*/
-    /*background: url('https://source.unsplash.com/4FGB28Jyy-Q');
-    background-size: cover;
-    background-position: center;*/
-}
-
-/*.container {
-    background-color: rgba(254, 254, 254, 0.4);
-    /*height: 90vh;
-    position: relative;
-}*/
-
-.border-top-me {
-    display: block;
-    margin: auto;
-    border-bottom: 2px solid rgba(128, 128, 128, 0.1);
-    width: 90%;
 }

@@ -3,13 +3,31 @@
             (@backgroundState.done)="animationDone($event)"
     >
     <div class="splash"
-        [@splashState]="splashState"
-        (@splashState.done)="animationDone($event)"
+        [@overlayState]="splashState"
+        (@overlayState.done)="animationDone($event)"
         >
             <div
             [@contentState]="contentState"
             (@contentState.done)="animationDone($event)">
                 <h1>"Check out my Work."</h1>
-            </div>      
+                <div class="container">
+                    <div class="row">
+                        <div *ngFor="let project of projects" class="col-md-3 col-sm-6">
+                            <div class="card">
+                                <div class="card-img-wrap">
+                                    <img class="img-fluid card-img-top" src="{{ project.imgUrl }}" alt="Card image cap">
+                                </div>
+                                <div class="card-block">
+                                    <h4 class="card-title">{{ project.name }}</h4>
+                                    <p class="card-text">{{ project.description }}</p>
+                                    <div class="pill">
+                                        {{ project.technologies[0] }}
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                 </div>
+            </div>
+            </div>
     </div>
 </div>

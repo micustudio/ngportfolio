@@ -1,29 +1,35 @@
-<div [@headerState]="headerState">
+<!--<div [@headerState]="headerState">
   <nav class="navbar navbar-toggleable-md navbar-light fixed-top">
-    <button class="navbar-toggler navbar-toggler-right" type="button" (click)="toggleMenu()">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-brand" [ngClass]="{'contrast': checkRoute('/about', ''), 'non-contrast': !checkRoute('/about', '') }" (click)="navigate('home')">Michael R. Comilang</div>
+    <div class="navbar-toggler navbar-toggler-right" (click)="toggleMenu()">
+      <div id="nav-toggle"><span></span></div>
+    </div>
+    <div class="navbar-brand" (click)="navigate('about')">Michael R. Comilang</div>
 
     <div class="collapse navbar-collapse" [ngClass]="{show: mobileMenu}">
       <ul class="navbar-nav mr-auto mt-2 mt-md-0">
         <li class="nav-item">
-          <div class="nav-link-navigate" [ngClass]="{'current': checkRoute('/home', '/'), 'contrast': checkRoute('/about', ''), 'non-contrast': !checkRoute('/about', '') }" (click)="navigate('home')">Home</div>
+          <div class="navigate-btn" (click)="navigate('about')">About</div>
         </li>
         <li class="nav-item">
-          <div class="nav-link-navigate" [ngClass]="{'current': checkRoute('/about', '') }" (click)="navigate('about')">About</div>
+          <div class="navigate-btn" (click)="navigate('portfolio')">Portfolio</div>
         </li>
         <li class="nav-item">
-          <div class="nav-link-navigate" [ngClass]="{'current': checkRoute('/portfolio', ''), 'contrast': checkRoute('/about', ''), 'non-contrast': !checkRoute('/about', '') }" (click)="navigate('portfolio')">Portfolio</div>
-        </li>
-        <li class="nav-item">
-          <div class="nav-link-navigate" [ngClass]="{'current': checkRoute('/resume', ''), 'contrast': checkRoute('/about', ''), 'non-contrast': !checkRoute('/about', '') }" (click)="navigate('resume')">Resume</div>
-        </li>
-        <li class="nav-item">
-          <div class="nav-link-navigate" [ngClass]="{'current': checkRoute('/contact', ''), 'contrast': checkRoute('/about', ''), 'non-contrast': !checkRoute('/about', '') }" (click)="navigate('contact')">Contact</div>
+          <div class="navigate-btn" (click)="navigate('contact')">Contact</div>
         </li>
       </ul>
 
     </div>
   </nav>
-</div>
+</div>-->
+
+<ul class="nav justify-content-end" [@headerState]="headerState">
+  <li class="nav-item">
+    <span class="nav-link about" (click)="navigate('about')">ABOUT</span>
+  </li>
+  <li class="nav-item">
+    <span class="nav-link" (click)="navigate('portfolio')">PORTFOLIO</span>
+  </li>
+  <li class="nav-item">
+    <span class="nav-link" (click)="navigate('contact')">CONTACT</span>
+  </li>
+</ul>

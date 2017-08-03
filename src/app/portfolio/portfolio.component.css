@@ -12,11 +12,32 @@
 }
 
 .splash {
-    background: blue;
+    background: rgba(255,255,255, 0.2);
     margin: 0 auto;
-    padding: 40px;
-    margin-top: 12%;
 }
+
+.card {
+    margin-bottom: 25px;
+}
+
+.card-img-wrap {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 100%;
+    }
+
+.card-img-top {
+    position: absolute;
+    object-fit: cover;
+    left: -100%;
+    right: -100%;
+    top: -100%;
+    bottom: -100%;
+    margin: auto; 
+    height: auto;
+    width: auto;
+    }
+
 
 h1 {
     text-align: center;
@@ -37,8 +58,7 @@ h3 {
 p {
     font-size: 12px;
     font-style: italic;
-    text-align: center;
-    letter-spacing: 3px;
-    color: #F4F4F4;
+    letter-spacing: 2px;
+    color: #444444;
     margin-top: 12px;
 }
