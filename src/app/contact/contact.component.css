@@ -1,17 +1,9 @@
-:host {
-    display: block;
+.container-box {
     height: 100vh;
-}
-
-.contain-me {
-    height: 100vh;
-    background: url('https://source.unsplash.com/IkpC4BZILCo');
-    background-size: cover;
-    background-position: center;
     padding-top: 56px;
 }
 
-.splash {
+.overlay {
     background: blue;
     margin: 0 auto;
     padding: 40px;

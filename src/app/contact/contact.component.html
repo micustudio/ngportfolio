@@ -1,9 +1,9 @@
-<div class="contain-me"
+<div class="container-box"
             [@backgroundState]="backgroundState"
             (@backgroundState.done)="animationDone($event)"
     >
-    <div class="splash"
-        [@overlayState]="splashState"
+    <div class="overlay"
+        [@overlayState]="overlayState"
         (@overlayState.done)="animationDone($event)"
         >
             <div
