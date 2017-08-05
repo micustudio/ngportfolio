@@ -3,24 +3,53 @@
 }
 
 .overlay {
-background: #2B32B2;  /* fallback for old browsers */
+    background: #FEFEFE;
+    /*margin: 0 auto;*/
+    padding: 5rem 5rem 4rem 5rem;
     margin: 0 auto;
-    padding: 2.5rem;
     position: relative;
     transform: translateY(-50%);
     top: 50%;
 }   
 
-h1 {
-    color: #FEFEFE;
+.introductory-text {
+    color: #555555; /*#FEFEFE; */
     font-family: 'Roboto', sans-serif;
-    font-size: 3rem;
-    text-align: center;
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    margin-bottom: 0;
 }
 
-h2 {
-    color: #ECF0F1;
+.first-line {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.spaced {
+    letter-spacing: .2rem;
+}
+
+.call-to-action {
+    color: #777777; ;/*#ECF0F1;*/
     font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
+    font-size: 1.3rem;
+    padding-top: 1.2rem;
+    margin: 0;
     text-align: right;
+    cursor: pointer;
+}
+
+.call-to-action:hover {
+    color: #000000;
+}
+
+@keyframes pipe {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+
+    
+}
+
+.pipe {
+    animation: pipe 1s linear 1s infinite;
 }

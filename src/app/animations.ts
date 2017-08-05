@@ -9,8 +9,7 @@ export const headerTrigger = trigger('headerState', [
         style({
           opacity: 100
         })
-        ])
-        
+        ])  
     ])
 
 export const linkColorTrigger = trigger('linkColorState', [
@@ -50,16 +49,16 @@ export const overlayTrigger = trigger('overlayState', [
       transition('* => enter', [
         animate('300ms ease-out',         
           style({
-            width: '1px',
+            width: '2px',
             height: '12%',
             opacity: 1,
-            transform: 'translateY(0%)'
+            transform: 'translateY(0)'
           })
         ),
         animate('300ms ease-out',
             style({
               opacity: 1,
-              width: '90%',
+              width: '100%',
               transform: 'translateY(0%)'
             })
         )
@@ -68,13 +67,14 @@ export const overlayTrigger = trigger('overlayState', [
 
 export const contentTrigger = trigger('contentState', [
       state('hidden', style({
-        display: 'none',
+        transform: 'scale(.95)',
         opacity: 0
       })),
       transition('* => enter', [
     
         animate('300ms ease-out'),
         style({
+          transform: 'scale(1)',
           opacity: 1
         })
         ]),

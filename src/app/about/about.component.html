@@ -9,8 +9,10 @@
             <div
             [@contentState]="contentState"
             (@contentState.done)="animationDone($event)">
-                <h1>"Hello, I'm a web developer based in the <abbr title="attribute">San Francisco, Bay Area</abbr>."</h1>
-                <h2>Please check out my work.</h2>
+                <h1 class="introductory-text first-line"><span class="spaced">Hello</span>, my name is <span class="name">Michael</span>.</h1>
+                <h1 class="introductory-text">I help <strong>build web assets.</strong></h1>
+                <h1 class="introductory-text">I'm a <em>web developer</em> based in the San Francisco, Bay Area.</h1>
+                <p class="call-to-action" (click)="navigate('portfolio')">Please check out my work. <span class="pipe">|</span></p>
             </div>      
     </div>
 </div>

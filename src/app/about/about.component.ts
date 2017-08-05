@@ -53,6 +53,10 @@ route: string;
     }
   }
 
+  navigate(route: string){
+    this.appService.navigate(route);
+  }
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }

@@ -52,8 +52,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.stateOfMenu = 'nohover';
   }
 
-
-
   navigate(route: string){
     this.appService.navigate(route);
   }
