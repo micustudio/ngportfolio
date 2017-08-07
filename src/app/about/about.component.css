@@ -43,13 +43,32 @@
     color: #000000;
 }
 
-@keyframes pipe {
-    0%   {opacity: 0;}
-    100% {opacity: 1;}
+@media (max-width: 575px) {
+    .overlay {
+        padding: 2rem 2rem 1rem 2rem;
+    }   
 
-    
-}
+    .introductory-text {
+        font-size: 1.7rem;
+        line-height: 2.2rem;
+        margin-bottom: 0;
+    }
 
-.pipe {
-    animation: pipe 1s linear 1s infinite;
-}
+    .first-line {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .spaced {
+        letter-spacing: .1rem;
+    }
+
+    .call-to-action {
+        font-size: 1rem;
+        padding-top: 1rem;
+        margin: 0;
+        text-align: right;
+        cursor: pointer;
+    }
+
+ }

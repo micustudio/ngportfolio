@@ -18,6 +18,7 @@ backgroundState: string;
 overlayState: string;
 contentState: string;
 route: string;
+opacity: number = 1;
 
   constructor(private appService: AppService,
               private router: Router) { }
@@ -26,6 +27,14 @@ route: string;
     this.backgroundState = 'show';
     this.overlayState = 'hidden';
     this.contentState = 'hidden';
+
+    setInterval(() => {
+      if(this.opacity == 1)
+        this.opacity = 0;
+      else
+        this.opacity = 1;
+    }, 600);
+
     this.subscription = this.appService.navigationChanged
       .subscribe(
         (route: string) => {
@@ -60,5 +69,4 @@ route: string;
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-
 }
