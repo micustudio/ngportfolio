@@ -24,14 +24,22 @@ export class HeaderComponent implements OnInit, OnDestroy {
   linkColorState: String = '';
   navClass = '';
   navLink = '';
-
+  headerWidth: number;
 
   constructor(private appService: AppService,
               private route: ActivatedRoute,
               private router: Router){}
 
+@HostListener('window:resize', ['$event'])
+  onResize(event){
+    console.log("Width: " + event.target.innerWidth);
+    this.headerWidth = event.target.innerWidth;
+  }
+
   ngOnInit() {
     this.headerState = 'enter';
+    this.headerWidth = window.innerWidth;
+  console.log("the header witdth is... " + this.headerWidth);
     this.subscription = this.router.events.subscribe( event => {
         if (event instanceof NavigationEnd ) {
           this.currentRoute = event.url;
@@ -58,7 +66,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   navigate(route: string){
-    this.headerState = 'navigate';
+    if(this.headerState == 'side-menu' && this.headerWidth < 576 ){
+        this.headerState = 'navigate';
+    }
     this.appService.navigate(route);
   }
 

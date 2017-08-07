@@ -8,7 +8,7 @@ export const headerTrigger = trigger('headerState', [
           transform: 'translateX(0%)'
       })),
     state('return', style({    
-        transform: 'translateY(-0%)'
+        transform: 'translateY(0%)'
       })),
 
       transition('* => enter', [
@@ -46,11 +46,11 @@ export const headerTrigger = trigger('headerState', [
 export const x1Trigger = trigger('x1State', [
     state('navigate', style({    
           opacity: '1',
-          background: '#666666'
+          background: '#555555'
         })),
     state('return', style({    
       opacity: '1',
-      background: '#666666'
+      background: '#555555'
     })),
     state('side-menu', style({    
           opacity: '1',
@@ -65,11 +65,11 @@ export const x1Trigger = trigger('x1State', [
 export const x2Trigger = trigger('x2State', [
     state('navigate', style({    
           opacity: '1',
-          background: '#666666'
+          background: '#555555'
         })),
     state('return', style({    
           opacity: '1',
-          background: '#666666'
+          background: '#555555'
         })),
     state('side-menu', style({    
           opacity: 0,
@@ -82,11 +82,11 @@ export const x2Trigger = trigger('x2State', [
 export const x3Trigger = trigger('x3State', [
     state('navigate', style({    
       opacity: '1',
-      background: '#666666'
+      background: '#555555'
     })),
     state('return', style({    
       opacity: '1',
-      background: '#666666'
+      background: '#555555'
     })),
     state('side-menu', style({    
           opacity: '1',
