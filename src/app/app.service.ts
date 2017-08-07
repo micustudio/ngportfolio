@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 @Injectable()
 export class AppService {
   navigationChanged = new Subject<String>();
+  outsideMenuClicked = new Subject<boolean>();
 
   constructor(private router: Router) { }
 
@@ -13,7 +14,8 @@ export class AppService {
   }
 
   closeMenu(){
-    // this.openState.emit(false);
+    this.outsideMenuClicked.next(true);
+    console.log("yes was clicked outside.");
   }
 
     navigate(route: string) {

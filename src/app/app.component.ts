@@ -23,7 +23,6 @@ export class AppComponent {
 
   closeMenu(){
     this.appService.closeMenu();
-    console.log("IM CLOSING FROM THE APP COMPONENT!!");
   }
 
 }

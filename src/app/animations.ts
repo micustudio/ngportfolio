@@ -1,6 +1,16 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 export const headerTrigger = trigger('headerState', [
+    state('side-menu', style({    
+        transform: 'translateX(0%)'
+      })),
+    state('navigate', style({    
+          transform: 'translateX(0%)'
+      })),
+    state('return', style({    
+        transform: 'translateY(-0%)'
+      })),
+
       transition('* => enter', [
         style({
           opacity: 0
@@ -9,8 +19,71 @@ export const headerTrigger = trigger('headerState', [
         style({
           opacity: 100
         })
-        ])  
+        ]),
+        
+        transition('* => side-menu', [
+        style({
+              transform: 'translateX(-100%)'
+        }),
+        animate('500ms cubic-bezier(0.77, 0.2, 0.05, 1.0)')
+        ]),
+
+        transition('* => navigate', [
+
+        animate('500ms cubic-bezier(0.77, 0.2, 0.05, 1.0)', style({
+              transform: 'translateX(-100%)'
+        }))
+        ]),
+
+        transition('* => return', [
+        style({
+              transform: 'translateY(-100%)'
+        }),
+        animate('200ms cubic-bezier(0.77, 0.2, 0.05, 1.0)')
+        ]),
     ])
+
+export const x1Trigger = trigger('x1State', [
+    state('navigate', style({    
+          opacity: '1',
+          background: '#666666'
+        })),
+    state('side-menu', style({    
+          opacity: '1',
+          transform: 'rotate(45deg) translate(2px, -3px)',
+          background: '#FEFEFE'
+        })),
+    transition('* => side-menu', [
+      animate('500ms ease-out')])
+
+])
+
+export const x2Trigger = trigger('x2State', [
+    state('navigate', style({    
+          opacity: '1',
+          background: '#666666'
+        })),
+    state('side-menu', style({    
+          opacity: 0,
+          transform: 'rotate(0deg) scale(0.2, 0.2)'
+          })),
+    transition('* => side-menu', [
+      animate('500ms ease-out')])
+])
+
+export const x3Trigger = trigger('x3State', [
+    state('navigate', style({    
+      opacity: '1',
+      background: '#666666'
+    })),
+    state('side-menu', style({    
+          opacity: '1',
+          transform: 'rotate(-45deg) translate(0px, 0px)',
+          background: '#FEFEFE'
+        })),
+    transition('* => side-menu', [
+      animate('500ms ease-out')])
+])
 
 export const linkColorTrigger = trigger('linkColorState', [
       transition('* => contrast', [

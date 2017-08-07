@@ -22,19 +22,19 @@
   </nav>
 </div>-->
 
-<ul class="nav fixed-top justify-content-end" [@headerState]="headerState">
-  <li class="nav-item">
-    <span class="nav-link about" (click)="navigate('about')">ABOUT</span>
-  </li>
-  <li class="nav-item">
-    <span class="nav-link" (click)="navigate('portfolio')">PORTFOLIO</span>
-  </li>
-  <li class="nav-item">
-    <span class="nav-link" (click)="navigate('contact')">CONTACT</span>
-  </li>
-  <div class="hamburger-menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+<ul class="nav fixed-top justify-content-end" [@headerState]="headerState" (@headerState.done)="animationDone($event)" [ngClass]="navClass">
+    <div class="hamburger-menu" (click)="openMenu()">
+      <span [@x1State]="headerState"></span>
+      <span [@x2State]="headerState"></span>
+      <span [@x3State]="headerState"></span>
+    </div>
+    <li class="nav-item">
+      <span class="nav-link about" [style.display]="navLink" (click)="navigate('about')">ABOUT</span>
+    </li>
+    <li class="nav-item">
+      <span class="nav-link" [style.display]="navLink" (click)="navigate('portfolio')">PORTFOLIO</span>
+    </li>
+    <li class="nav-item">
+      <span class="nav-link" [style.display]="navLink" (click)="navigate('contact')">CONTACT</span>
+    </li>
 </ul>

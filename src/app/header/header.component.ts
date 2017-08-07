@@ -3,24 +3,27 @@ import { AppService } from '../app.service';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
-import { headerTrigger, linkColorTrigger } from '../animations';
+import { headerTrigger, linkColorTrigger, x1Trigger, x2Trigger, x3Trigger } from '../animations';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  animations: [headerTrigger, linkColorTrigger]
+  animations: [headerTrigger, linkColorTrigger, x1Trigger, x2Trigger, x3Trigger]
 })
 
 export class HeaderComponent implements OnInit, OnDestroy {
   currentRoute: string = '/';
   subscription: Subscription;
+  subscription2: Subscription;
   mobileMenu: boolean = false;
   headerState: String;
   stateOfToggle = false;
   stateOfScroll = false;
   stateOfMenu = 'nohover';
   linkColorState: String = '';
+  navClass = '';
+  navLink = '';
 
 
   constructor(private appService: AppService,
@@ -33,13 +36,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
         if (event instanceof NavigationEnd ) {
           this.currentRoute = event.url;
           console.log("The current routing route is ..." + this.currentRoute);
-          if(this.currentRoute == '/about'){
-            console.log("ITS TRUEE!!!");
-            this.linkColorState = 'contrast';
-            
-          }
         }
-});
+    });
+    this.subscription2 = this.appService.outsideMenuClicked.subscribe( value => {
+      if(value == true && this.headerState == 'side-menu')
+        this.headerState = 'navigate';
+      else
+        return false;
+    });
   }
 
   toggleTrue() {
@@ -53,11 +57,29 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   navigate(route: string){
+    this.headerState = 'navigate';
     this.appService.navigate(route);
   }
 
-  toggleMenu() {
-    this.mobileMenu = !this.mobileMenu;
+  openMenu() {
+    if(this.headerState !== 'side-menu'){
+        this.navClass = 'side-menu';
+        this.navLink = 'block';
+        this.headerState = 'side-menu';
+    }
+    else {
+        this.headerState = 'navigate';
+    }
+  }
+
+animationDone(event) {
+    console.log(event);
+    if(event.triggerName == 'headerState' && event.toState == 'navigate') {
+        this.headerState = 'return';
+        console.log("navigation is true! (either closed or navigated somewhere else)");
+        this.navClass = '';
+        this.navLink = '';
+    }
   }
 
   checkRoute(route, route2){
@@ -69,6 +91,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
+    this.subscription2.unsubscribe();
   }
 
 }

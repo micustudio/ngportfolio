@@ -1,6 +1,7 @@
 .hamburger-menu {
-    padding: .975rem 1.4rem .5rem 1rem;
+    padding: 1.1rem 1.5rem;
     cursor: pointer;
+    z-index: 4;
 }
 
 .hamburger-menu span
@@ -11,26 +12,23 @@
   margin-bottom: .4rem;
   position: relative;
 
-  background: #444444;
+  background: #666666;
   border-radius: 3px;
   
   z-index: 3;
   
   transform-origin: 4px 0px;
-  transition: all 200ms ease-out 0s;
   
-  /*transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;*/
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+              background 200ms cubic-bezier(0.77, 0.2, 0.05, 1.0),
+              opacity 200ms ease;
 }
 
-.hamburger-menu span:first-child
-{
+.hamburger-menu span:first-child {
   transform-origin: 0% 0%;
 }
 
-.hamburger-menu span:nth-last-child(2)
-{
+.hamburger-menu span:nth-last-child(2) {
   transform-origin: 0% 100%;
 }
 
@@ -86,21 +84,44 @@
 } 
 
 @media (max-width: 575px) {
-    
-    .hamburger-menu span {
-        display: block;
+
+    .nav {
+        height: 3.8rem;
+        width: 100%;
+        background-color: #FAFAFA;
     }
-    .hamburger-menu:hover span {
-        
-        background: #F8F8FF;
+
+    .side-menu {
+        height: auto;
+        padding: 3.5rem 2.5rem;
+        background: rgba(72, 85, 99, 0.95);
+        background: -webkit-linear-gradient(to right, rgba(41, 50, 60, 0.95), rgba(72, 85, 99, 0.95));
+        background: linear-gradient(to right, rgba(41, 50, 60, 0.95), rgba(72, 85, 99, 0.95));
+    }
+
+    .justify-content-end {
+        display: block;
     }
 
     .nav-link {
         display: none;
+        margin: 0;
+        font-size: 1rem;
+        letter-spacing: .4rem;
+        color: #FEFEFE;
+    }
+    
+    .hamburger-menu {
+        position: absolute;
+        top: 0rem;
+        right: 0rem;
     }
 
-    .nav {
-        padding-right: 0;
-        height: 3.5rem;
+    .hamburger-menu span {
+        display: block;
     }
+    .hamburger-menu:hover span {
+        background: #F8F8FF;
+    }
+
  }
