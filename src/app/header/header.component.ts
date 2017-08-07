@@ -66,7 +66,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   navigate(route: string){
-    if(this.headerState == 'side-menu' && this.headerWidth < 576 ){
+    if(this.headerState == 'side-menu' && this.headerWidth < 768 ){
         this.headerState = 'navigate';
     }
     this.appService.navigate(route);
