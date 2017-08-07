@@ -4,7 +4,6 @@
 
 .overlay {
     background: #FEFEFE;
-    /*margin: 0 auto;*/
     padding: 5rem 5rem 4rem 5rem;
     margin: 0 auto;
     position: relative;
@@ -43,9 +42,10 @@
     color: #000000;
 }
 
-@media (max-width: 575px) {
+@media (max-width: 767px) {
     .overlay {
         padding: 2rem 2rem 1rem 2rem;
+        margin: 0 auto;
     }   
 
     .introductory-text {
