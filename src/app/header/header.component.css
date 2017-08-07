@@ -83,7 +83,7 @@
     padding: 1.2rem 0rem ;
 } 
 
-@media (max-width: 575px) {
+@media (max-width: 767px) {
 
     .nav {
         height: 3.8rem;
