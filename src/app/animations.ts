@@ -48,6 +48,10 @@ export const x1Trigger = trigger('x1State', [
           opacity: '1',
           background: '#666666'
         })),
+    state('return', style({    
+      opacity: '1',
+      background: '#666666'
+    })),
     state('side-menu', style({    
           opacity: '1',
           transform: 'rotate(45deg) translate(2px, -3px)',
@@ -63,6 +67,10 @@ export const x2Trigger = trigger('x2State', [
           opacity: '1',
           background: '#666666'
         })),
+    state('return', style({    
+          opacity: '1',
+          background: '#666666'
+        })),
     state('side-menu', style({    
           opacity: 0,
           transform: 'rotate(0deg) scale(0.2, 0.2)'
@@ -73,6 +81,10 @@ export const x2Trigger = trigger('x2State', [
 
 export const x3Trigger = trigger('x3State', [
     state('navigate', style({    
+      opacity: '1',
+      background: '#666666'
+    })),
+    state('return', style({    
       opacity: '1',
       background: '#666666'
     })),

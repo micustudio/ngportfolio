@@ -39,8 +39,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
         }
     });
     this.subscription2 = this.appService.outsideMenuClicked.subscribe( value => {
-      if(value == true && this.headerState == 'side-menu')
+      if(value == true && this.headerState == 'side-menu'){
         this.headerState = 'navigate';
+      }
       else
         return false;
     });
