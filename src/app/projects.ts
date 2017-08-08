@@ -1,25 +1,4 @@
-import { Component, HostBinding, HostListener, OnInit, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router'
-
-import { AppService } from '../app.service';
-import { Subscription } from 'rxjs/Subscription';
-
-import { backgroundTrigger, overlayTrigger, contentTrigger } from '../animations';
-
-@Component({
-  selector: 'app-portfolio',
-  templateUrl: './portfolio.component.html',
-  styleUrls: ['./portfolio.component.css'],
-  animations: [ backgroundTrigger, overlayTrigger, contentTrigger ]
-})
-export class PortfolioComponent implements OnInit {
-  subscription: Subscription;
-  backgroundState: string;
-  overlayState: string;
-  contentState: string;
-  route: string;
-
-  projects = [
+const projects = [
     {
       name: 'nicefinds',
       description: 'Lorem ipsum dolor sit amet, dicant civibus persecuti no ius. Et mediocrem erroribus argumentum mea, exerci adipisci splendide ex eos, ea usu blandit imperdiet quaerendum. Mel ea rebum iudico numquam. Ut mel option integre, sed ex dico utamur ullamcorper. Alii legimus cu has, munere dissentiet ei usu.',
@@ -46,42 +25,5 @@ export class PortfolioComponent implements OnInit {
     }
   
   ]
-
- constructor(private appService: AppService,
-              private router: Router) { }
-
-  ngOnInit() {
-    this.backgroundState = 'show';
-    this.overlayState = 'hidden';
-    this.contentState = 'hidden';
-    this.subscription = this.appService.navigationChanged
-      .subscribe(
-        (route: string) => {
-          console.log("got it!! the route here is... " + route);
-             this.backgroundState = 'leave';
-              this.route = route;
-        }
-      );
-  }
-
-  animationDone(event) {
-    if(event.triggerName == 'backgroundState' && event.toState == 'show' ) {
-        this.overlayState = 'enter';
-    }
-    else if(event.triggerName == 'overlayState' && event.toState == 'enter' ) {
-        this.contentState = 'enter';
-    }
-    else if(event.toState == 'leave') {
-        // reset states
-        this.backgroundState = 'show';
-        this.overlayState = 'hidden';
-        this.contentState = 'hidden';
-        this.router.navigateByUrl('/' + this.route);
-    }
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
-
-}
+  
+  export default projects;
