@@ -12,17 +12,20 @@
                 <h1>"Check out my Work."</h1>
                 <div class="container">
                     <div class="row">
-                        <div *ngFor="let project of projects" class="col-md-3 col-sm-6">
+                        <div *ngFor="let project of projects" class="col-md-4 col-sm-6">
                             <div class="card">
                                 <div class="card-img-wrap">
-                                    <img class="img-fluid card-img-top" src="{{ project.imgUrl }}" alt="Card image cap">
+                                    <img class="img-fluid card-img-top" src="{{ project.imgUrl }}" alt="Card image cap" (click)="open(project.link)">
                                 </div>
                                 <div class="card-block">
                                     <h4 class="card-title">{{ project.name }}</h4>
-                                    <p class="card-text">{{ project.description }}</p>
-                                    <div class="pill">
-                                        {{ project.technologies[0] }}
-                                    </div>
+                                    <p class="card-text">{{ project.description }} <span class=link (click)="open(project.link)">Link</span></p>
+                                        <span  *ngFor="let technology of project.technologies" class="pill technology">
+                                            {{ technology }}
+                                        </span>
+                                        <span  *ngFor="let api of project.apis" class="pill api">
+                                            {{ api }}
+                                        </span>
                                 </div>
                             </div>
                         </div>

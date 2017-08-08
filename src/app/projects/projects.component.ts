@@ -56,6 +56,10 @@ export class ProjectsComponent implements OnInit {
     }
   }
 
+  open(link){
+    window.open(link);
+  }
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
