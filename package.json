@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --aot -prod",
-    "start": "node server.js",
+    "start": "ng build && node server.js",
     "deploy": "git push origin master && git push heroku master"
   },
   "private": true,
@@ -31,6 +31,7 @@
     "compression": "^1.6.2",
     "core-js": "^2.4.1",
     "express": "^4.15.2",
+    "mailgun": "^0.5.0",
     "rxjs": "^5.1.0",
     "typescript": "^2.2.2",
     "web-animations-js": "^2.2.5",
