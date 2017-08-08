@@ -39,7 +39,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.headerState = 'enter';
     this.headerWidth = window.innerWidth;
-  console.log("the header witdth is... " + this.headerWidth);
     this.subscription = this.router.events.subscribe( event => {
         if (event instanceof NavigationEnd ) {
           this.currentRoute = event.url;

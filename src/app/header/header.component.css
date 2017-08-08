@@ -1,7 +1,7 @@
 .hamburger-menu {
     padding: 1.1rem 1.5rem;
     cursor: pointer;
-    z-index: 4;
+    display: none;
 }
 
 .hamburger-menu span
@@ -113,8 +113,10 @@
     
     .hamburger-menu {
         position: absolute;
+        display: block;
         top: 0rem;
         right: 0rem;
+        z-index: 4;
     }
 
     .hamburger-menu span {

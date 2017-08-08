@@ -9,8 +9,9 @@
             <div
             [@contentState]="contentState"
             (@contentState.done)="animationDone($event)">
-                <h1>"Check out my Work."</h1>
+
                 <div class="container">
+                    <blockquote class="blockquote"><h1>Projects</h1></blockquote>
                     <div class="row">
                         <div *ngFor="let project of projects" class="col-md-4 col-sm-6">
                             <div class="card">
