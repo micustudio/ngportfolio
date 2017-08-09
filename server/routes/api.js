@@ -3,13 +3,13 @@ const router = express.Router();
 
 const Mailgun = require('mailgun').Mailgun;
 
-const mg = new Mailgun('key-47ac9e7381ff4dcd4f6d011c9ee39397');
+const mg = process.env.MAILGUN_KEY;
 
 
 /* GET api listing. */
 router.get('/', (req, res) => {
     mg.sendText(
-        'Cool user <example@example.com>', 
+        '<example2@example.com>', 
         'micumieu@gmail.com',
         'This is the subject',
         'This is the text',
