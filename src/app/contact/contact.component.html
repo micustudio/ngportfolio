@@ -16,7 +16,8 @@
                         <br>
                         <form [formGroup]="myForm" (ngSubmit)="submitContactForm()">
                         <div class="form-group">
-                            <input 
+                            <input
+                                #input
                                 placeholder="name"
                                 type="text"
                                 id="name"
@@ -32,21 +33,13 @@
                                 formControlName="email">
                         </div>
                         <div class="form-group">
-                            <input 
-                                placeholder="subject"
-                                type="text"
-                                id="subject"
-                                class="form-control"
-                                formControlName="subject">
-                        </div>
-                        <div class="form-group">
                             <textarea 
-                                cols="40ss" 
+                                cols="40" 
                                 rows="7"
                                 placeholder="message"
-                                id="body"
+                                id="message"
                                 class="form-control"
-                                formControlName="body">
+                                formControlName="message">
                             > 
                             </textarea>     
                         </div>

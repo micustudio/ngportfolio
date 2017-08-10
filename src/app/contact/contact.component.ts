@@ -1,4 +1,4 @@
-import { Component, HostBinding, HostListener, OnInit, OnDestroy } from '@angular/core';
+import { Component, HostBinding, HostListener, OnInit, AfterViewInit, ViewChildren, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 
@@ -16,6 +16,7 @@ import { backgroundTrigger, overlayTrigger, contentTrigger } from '../animations
   animations: [ backgroundTrigger, overlayTrigger, contentTrigger ]
 })
 export class ContactComponent implements OnInit {
+@ViewChildren('input') vc;
 myForm: FormGroup;
 subscription: Subscription;
 backgroundState: string;
@@ -33,8 +34,7 @@ route: string;
     this.myForm = new FormGroup({
       name: new FormControl(null, Validators.required),
       email: new FormControl(null, Validators.required),
-      subject: new FormControl(null, Validators.required),
-      body: new FormControl(null, Validators.required)
+      message: new FormControl(null, Validators.required)
     })
     this.subscription = this.appService.navigationChanged
       .subscribe(
@@ -67,14 +67,17 @@ route: string;
         let emailBundle = {
           name: this.myForm.value.name,
           email: this.myForm.value.email,
-          subject: this.myForm.value.subject,
-          body: this.myForm.value.body
+          message: this.myForm.value.message
         }
 
         this.appService.submitContact(emailBundle);
         this.myForm.reset();
 
     }
+
+  ngAfterViewInit() {
+      this.vc.first.nativeElement.focus();
+  }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
