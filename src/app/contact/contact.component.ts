@@ -86,4 +86,8 @@ route: string;
     this.subscription.unsubscribe();
   }
 
+  emailGood() {
+    return this.appService.emailSubmittedStatus();
+  }
+
 }

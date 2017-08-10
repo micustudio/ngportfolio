@@ -7,6 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class AppService {
   navigationChanged = new Subject<String>();
   outsideMenuClicked = new Subject<boolean>();
+  emailSubmitted: boolean = false;
 
   constructor(private router: Router,
               private http: HttpClient) { }
@@ -26,15 +27,24 @@ export class AppService {
     // this.router.navigateByUrl('/' + route);
   }
 
-    submitContact(email){
-      const body = JSON.stringify(email);
+  submitContact(email){
+    const body = JSON.stringify(email);
+    this.emailSubmitted = false;
+    
+    return this.http.post('/api/mailgun', body, { headers: new HttpHeaders().set('Content-Type', 'application/json')}).subscribe(data => {
+      // Read the response data.
 
-      return this.http.post('/api/mailgun', body, { headers: new HttpHeaders().set('Content-Type', 'application/json')}).subscribe(data => {
-        // Read the response data.
-        console.log(data);
-      });
+      if(data['message'] == 'Success') {
+          this.emailSubmitted = true;
+      }
+    
+    });
 
-    }
+  }
+
+  emailSubmittedStatus(){
+    return this.emailSubmitted;
+  }
 
 
 
