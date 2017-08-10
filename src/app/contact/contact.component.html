@@ -6,10 +6,59 @@
         [@overlayState]="overlayState"
         (@overlayState.done)="animationDone($event)"
         >
-            <div
-            [@contentState]="contentState"
-            (@contentState.done)="animationDone($event)">
-                <h1>"Let's Connect."</h1>
-            </div>      
+        <div
+        [@contentState]="contentState"
+        (@contentState.done)="animationDone($event)">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 offset-md-4">
+                        <h1>Contact</h1>
+                        <br>
+                        <form [formGroup]="myForm" (ngSubmit)="submitContactForm()">
+                        <div class="form-group">
+                            <input 
+                                placeholder="name"
+                                type="text"
+                                id="name"
+                                class="form-control"
+                                formControlName="name">
+                        </div>
+                        <div class="form-group">
+                            <input 
+                                placeholder="email"
+                                type="email"
+                                id="email"
+                                class="form-control"
+                                formControlName="email">
+                        </div>
+                        <div class="form-group">
+                            <input 
+                                placeholder="subject"
+                                type="text"
+                                id="subject"
+                                class="form-control"
+                                formControlName="subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea 
+                                cols="40ss" 
+                                rows="7"
+                                placeholder="message"
+                                id="body"
+                                class="form-control"
+                                formControlName="body">
+                            > 
+                            </textarea>     
+                        </div>
+                            <button
+                                    class="btn btn-primary"
+                                    type="submit"
+                                    [disabled]="!myForm.valid">Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>      
     </div>
 </div>

@@ -7,12 +7,17 @@ const mg = new Mailgun(process.env.MAILGUN_KEY);
 
 
 /* GET api listing. */
-router.get('/', (req, res) => {
+router.post('/mailgun', (req, res) => {
+    console.log(`The name is.... ${req.body.name}`);
+    console.log(`The email is.... ${req.body.email}`);
+    console.log(`The subject is.... ${req.body.subject}`);
+    console.log(`The body is.... ${req.body.body}`);
+
     mg.sendText(
-        '<example2@example.com>', 
+        `${req.body.name} <${req.body.email}>`, 
         'micumieu@gmail.com',
-        'This is the subject',
-        'This is the text',
+        `${req.body.subject}`,
+        `${req.body.body}`,
         '', {},
         function(err) {
             if (err) console.log('Oh noes: ' + err);
