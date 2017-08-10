@@ -27,23 +27,13 @@ export class AppService {
   }
 
     submitContact(email){
-        const body = JSON.stringify(email);
-        // console.log("The body for USER is!!!!");
-        // console.log(body);
-        // const headers = new Headers({'Content-Type': 'application/json'});
-        // return this.http.post(domain + 'user/', body, {headers: headers})
-        //         .map((response: Response) => {
-        //           const retrievedUser = response.json();
-        //           console.log("The retrievedUser is ");
-        //           console.log(retrievedUser);
-        //         })
-        //         .catch((error: Response) => Observable.throw(error.json()));
+      const body = JSON.stringify(email);
 
       return this.http.post('/api/mailgun', body, { headers: new HttpHeaders().set('Content-Type', 'application/json')}).subscribe(data => {
-        // Read the result field from the JSON response.
+        // Read the response data.
         console.log(data);
       });
-      
+
     }
 
 

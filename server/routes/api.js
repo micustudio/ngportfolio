@@ -19,11 +19,16 @@ router.post('/mailgun', (req, res) => {
         `${req.body.message}`,
         '', {},
         function(err) {
-            if (err) console.log('Oh noes: ' + err);
-            else     console.log('Success');
+            if (err) 
+                console.log(`Oh no an error! ${err}`);
+            else
+            {
+                res.status(200).json({
+                    message: 'Success'
+                });
+            }     
     });
 
-    res.send('api works');
 });
 
 module.exports = router;
