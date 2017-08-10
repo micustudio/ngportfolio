@@ -15,7 +15,7 @@ h1 {
     font-size: 2.5rem;
     letter-spacing: 0.125rem;
     margin-top: 2rem;
-    margin-bottom: 0rem; 
+    margin-bottom: .5rem; 
 }
 
 p {
@@ -69,4 +69,13 @@ img {
         font-size: 2rem;
     }
 
+}
+
+.email-good {
+    background-color: #2ecc71;
+    border-radius: 0.125rem;
+    color: #F4F4F4;
+    font-style: italics;
+    padding: .2rem .5rem;
+    margin-bottom: 0.5rem;
 }

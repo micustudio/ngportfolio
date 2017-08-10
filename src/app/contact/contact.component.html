@@ -17,9 +17,8 @@
                             <span (click)="open('https://drive.google.com/file/d/0B3l9y_jTYg_aRl90RkNYOTdBaEU/view?usp=sharing')"><p>view my resume on drive <img src="/assets/images/google-drive.svg"></p></span>
                             <span (click)="open('https://www.linkedin.com/in/michael-comilang-a6b835118/')"><p>add me on linkedin <img src="/assets/images/linkedin.svg"></p></span>
                         </div>
-                        <div *ngIf="emailGood()" class="email-good">Thanks! I will check out your message."</div>
                         <h1>or send me a messsage:</h1>
-                        <br>
+                        <div *ngIf="emailGood()" class="email-good">Thanks! I will check out your message.</div>
                         <form [formGroup]="myForm" (ngSubmit)="submitContactForm()">
                         <div class="form-group">
                             <input

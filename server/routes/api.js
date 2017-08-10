@@ -3,7 +3,7 @@ const router = express.Router();
 
 const Mailgun = require('mailgun').Mailgun;
 
-const mg = new Mailgun('key-53861beb99f82a5125c95356f1db4a77');
+const mg = new Mailgun(process.env.MAILGUN_KEY);
 
 
 /* GET api listing. */
