@@ -1,7 +1,7 @@
 const projects = [
     {
       name: 'nicefinds',
-      description: "An amazon affiliate-based website designed for efficiency. Features a simple to use, yet powerful admin panel. Ability to publish products from amazon to the main page with an affiliate link. Products can be published manually or with a direct link and a click of a button, be automatically posted on the front page with it's name, brand, product description, pictures, a tweet sent out with a photo, and saved to a database. Front page features ability to sort by categories, tag, or brand name, and infinite scrolling.",
+      description: "An amazon affiliate-based website designed for efficiency. Features a simple to use, yet powerful admin panel. Ability to publish products from amazon to the main page with an associated affiliate link. Products can be published manually or with a direct product link and a click of a button, be posted automatically on the front page, with a complete description, a tweet sent out with a photo, and saved to a database. Front page features ability to sort by categories, tag, or brand name, and infinite scrolling.",
       link: 'http://www.nicefinds.net/',
       imgUrl: 'https://s24.postimg.org/qebts6yrp/logo_favicon.png',
       technologies: [ 'Angular', 'MongoDB', 'Express', 'Node.js', 'Bootstrap', 'HTML', 'CSS', 'Javascript'],
@@ -17,7 +17,7 @@ const projects = [
     },
     {
       name: 'ngportfolio',
-      description: 'This website. Features a user-experience reminiscent to that of a native iPhone or Android app. Features Angular Animations for smooth transitions between different routes.',
+      description: 'This current-facing website. Features a user-experience similar to that of a native iPhone or Android app. Features Angular Animations for smooth transitions between different routes.',
       link: 'https://michaelcom.herokuapp.com/',
       imgUrl: 'https://s17.postimg.org/6ytcmy4zj/Copy_of_logo_favicon_ngportfolio.png',
       technologies: [ 'Angular', 'Angular Animations', 'Express', 'Node.js', 'Bootstrap', 'HTML', 'CSS', 'Javascript'],
@@ -33,7 +33,7 @@ const projects = [
     },
     {
       name: 'travel-site',
-      description: 'A flexible and customizable single page brochure site built with a modern development workflow in mind.',
+      description: 'A flexible and customizable single page brochure site built with modern skills, tools, and best practices.',
       link: 'https://micustudio.github.io/travel-site/#',
       imgUrl: 'https://s2.postimg.org/rznwg2czd/Screen_Shot_2017-08-08_at_1.32.15_PM.png',
       technologies: [ 'HTML', 'CSS', 'Javascript', 'JQuery', 'Gulp', 'PostCSS', 'BEM Philosophy', 'Webpack' ],

@@ -67,13 +67,13 @@ img {
 
     h1 {
         font-size: 2rem;
+        margin-top: 1.8rem;
     }
 
 }
 
 .email-good {
     background-color: #2ecc71;
-    border-radius: 0.125rem;
     color: #F4F4F4;
     font-style: italics;
     padding: .2rem .5rem;
