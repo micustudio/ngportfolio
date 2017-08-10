@@ -61,19 +61,22 @@ route: string;
         this.router.navigateByUrl('/' + this.route);
     }
   }
+  
+  open(link){
+    window.open(link);
+  }
 
+  submitContactForm(){
+      let emailBundle = {
+        name: this.myForm.value.name,
+        email: this.myForm.value.email,
+        message: this.myForm.value.message
+      }
 
-    submitContactForm(){
-        let emailBundle = {
-          name: this.myForm.value.name,
-          email: this.myForm.value.email,
-          message: this.myForm.value.message
-        }
+      this.appService.submitContact(emailBundle);
+      this.myForm.reset();
 
-        this.appService.submitContact(emailBundle);
-        this.myForm.reset();
-
-    }
+  }
 
   ngAfterViewInit() {
       this.vc.first.nativeElement.focus();
