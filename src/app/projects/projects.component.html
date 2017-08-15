@@ -18,7 +18,7 @@
                                 <div class="card-img-wrap">
                                     <img class="img-fluid card-img-top" src="{{ project.imgUrl }}" alt="Card image cap" (click)="open(project.link)">
                                 </div>
-                                <div class="card-block">
+                                <div class="card-body">
                                     <h4 class="card-title">{{ project.name }}</h4>
                                     <p class="card-text">{{ project.description }} <span class=link (click)="open(project.link)">Link</span></p>
                                         <span  *ngFor="let technology of project.technologies" class="pill technology">

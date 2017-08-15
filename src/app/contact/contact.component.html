@@ -11,43 +11,41 @@
         (@contentState.done)="animationDone($event)">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 offset-lg-4">
-                        <div class="container">
-                            <span (click)="open('https://github.com/micustudio')"><p>check out my commits on github <img src="/assets/images/github-icon.svg"></p></span>
-                            <span (click)="open('https://drive.google.com/file/d/0B3l9y_jTYg_aRl90RkNYOTdBaEU/view?usp=sharing')"><p>view my resume on drive <img src="/assets/images/google-drive.svg"></p></span>
-                            <span (click)="open('https://www.linkedin.com/in/michael-comilang-a6b835118/')"><p>add me on linkedin <img src="/assets/images/linkedin.svg"></p></span>
-                        </div>
+                    <div class="col-lg-6 mx-auto">
+                        <p><span (click)="open('https://github.com/micustudio')">check out my commits on github <img src="/assets/images/github-icon.svg"></span></p>
+                        <p><span (click)="open('https://drive.google.com/file/d/0B3l9y_jTYg_aRl90RkNYOTdBaEU/view?usp=sharing')">view my resume on drive <img src="/assets/images/google-drive.svg"></span></p>
+                        <p><span (click)="open('https://www.linkedin.com/in/michael-comilang-a6b835118/')">add me on linkedin <img src="/assets/images/linkedin.svg"></span></p>
                         <h1>or send me a messsage:</h1>
                         <div *ngIf="emailGood()" class="email-good">Thanks! I will check out your message.</div>
                         <form [formGroup]="myForm" (ngSubmit)="submitContactForm()">
-                        <div class="form-group">
-                            <input
-                                #input
-                                placeholder="name"
-                                type="text"
-                                id="name"
-                                class="form-control"
-                                formControlName="name">
-                        </div>
-                        <div class="form-group">
-                            <input 
-                                placeholder="email"
-                                type="email"
-                                id="email"
-                                class="form-control"
-                                formControlName="email">
-                        </div>
-                        <div class="form-group">
-                            <textarea 
-                                cols="40" 
-                                rows="7"
-                                placeholder="message"
-                                id="message"
-                                class="form-control"
-                                formControlName="message">
-                            > 
-                            </textarea>     
-                        </div>
+                            <div class="form-group">
+                                <input
+                                    #input
+                                    placeholder="name"
+                                    type="text"
+                                    id="name"
+                                    class="form-control"
+                                    formControlName="name">
+                            </div>
+                            <div class="form-group">
+                                <input 
+                                    placeholder="email"
+                                    type="email"
+                                    id="email"
+                                    class="form-control"
+                                    formControlName="email">
+                            </div>
+                            <div class="form-group">
+                                <textarea 
+                                    cols="40" 
+                                    rows="7"
+                                    placeholder="message"
+                                    id="message"
+                                    class="form-control"
+                                    formControlName="message">
+                                > 
+                                </textarea>     
+                            </div>
                             <button
                                     class="btn btn-primary" 
                                     type="submit"
