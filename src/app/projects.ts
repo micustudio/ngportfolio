@@ -33,7 +33,7 @@ const projects = [
     },
     {
       name: 'travel-site',
-      description: 'A flexible and customizable single page (brochure) site built with modern javascript, tools, and best practices.',
+      description: 'A flexible and customizable single page (brochure) site built with modern developer skills, tools, and best practices.',
       link: 'https://micustudio.github.io/travel-site/#',
       imgUrl: 'https://s2.postimg.org/rznwg2czd/Screen_Shot_2017-08-08_at_1.32.15_PM.png',
       technologies: [ 'HTML', 'CSS', 'Javascript', 'jQuery', 'Gulp', 'PostCSS', 'BEM Philosophy', 'Webpack' ],
