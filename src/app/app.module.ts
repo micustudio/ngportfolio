@@ -22,7 +22,7 @@ import { ProjectsComponent } from './projects/projects.component';
     ProjectsComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'my-universal-app'}),
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,

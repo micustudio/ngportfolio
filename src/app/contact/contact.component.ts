@@ -63,7 +63,7 @@ route: string;
   }
   
   open(link){
-    window.open(link);
+    this.router.navigateByUrl(link);
   }
 
   submitContactForm(){
